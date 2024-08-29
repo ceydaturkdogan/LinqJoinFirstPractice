@@ -33,9 +33,9 @@ class Program
 
         var bookTable = authors.Join(
             books,
-            author=>author.AuthorId,
-            book=>book.AuthorId,
-            (author, book) => new
+            author=>author.AuthorId, //table key
+            book=>book.AuthorId,    //table key
+            (author, book) => new  //temporary created new table
             {
                 BooksId=book.BookId,
                 AuthorName=author.Name,
